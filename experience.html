@@ -6,35 +6,95 @@
     <title>Experience - JIANG, Yanze</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
-        header { text-align: center; padding: 20px; background: #333; color: #fff; }
-        section { margin: 20px 0; padding: 20px; background: #fff; border-radius: 5px; }
+        header { text-align: center; padding: 20px; background: #333; color: #fff; position: relative; }
         a { color: #333; text-decoration: none; }
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        section { margin: 20px 0; padding: 20px; background: #fff; border-radius: 5px; }
+        .details { display: none; margin-top: 5px; }
+        .toggle { cursor: pointer; color: #007BFF; }
+        .toggle:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
 <header>
+    <button class="back-button" onclick="window.history.back()">Last Page</button>
     <h1>JIANG, Yanze / 江彥澤</h1>
-    <a href="index.html">Back to Home</a>
 </header>
 
 <section>
     <h2>Experience</h2>
-    <p><strong>2024 Sep – Now</strong> Co-founder of CDMP Society<br>
-    - In charge of budget management and reimbursement of expenses</p>
-    <p><strong>2024 Sep – Now</strong> Secretary of SME Job Hunting Club<br>
-    - Managing the online community and publicizing daily activities</p>
-    <p><strong>2024 Sep</strong> Mathematic Modeling Competition<br>
-    - Transformed real-life farming problems into models; Second Prize in Guangdong Province</p>
-    <p><strong>2024 May</strong> Greater Bay Area Field Trip (COOP1001, CUHK)<br>
-    - Visited innovative companies and gained industry insights</p>
-    <p><strong>2024 Apr – 2024 May</strong> Machine Learning Research<br>
-    - Project on multi-disease prediction</p>
-    <p><strong>2023 Sep – 2023 Dec</strong> SHIMMER (Voluntary Senior Staff Photo Activity)<br>
-    - Executive director, responsible for event materials and expenses</p>
-    <p><strong>2023 Oct</strong> HKICPA Business Case Competition 2023<br>
-    - Team leader, managed work distribution and analysis report</p>
+    
+    <p class="toggle" onclick="toggleDetails('details1')">
+        <strong>2024 Sep – Now</strong> Co-founder of CDMP Society
+    </p>
+    <div id="details1" class="details">
+        - In charge of budget management and reimbursement of expenses
+    </div>
+    
+    <p class="toggle" onclick="toggleDetails('details2')">
+        <strong>2024 Sep – Now</strong> Secretary of SME Job Hunting Club
+    </p>
+    <div id="details2" class="details">
+        - Managing the online community and publicizing daily activities
+    </div>
+
+    <p class="toggle" onclick="toggleDetails('details3')">
+        <strong>2024 Sep</strong> Mathematic Modeling Competition
+    </p>
+    <div id="details3" class="details">
+        - Transformed real-life farming problems into models; Second Prize in Guangdong Province
+    </div>
+    
+    <p class="toggle" onclick="toggleDetails('details4')">
+        <strong>2024 May</strong> Greater Bay Area Field Trip (COOP1001, CUHK)
+    </p>
+    <div id="details4" class="details">
+        - Visited innovative companies and gained industry insights
+    </div>
+
+    <p class="toggle" onclick="toggleDetails('details5')">
+        <strong>2024 Apr – 2024 May</strong> Machine Learning Research
+    </p>
+    <div id="details5" class="details">
+        - Project on multi-disease prediction
+    </div>
+
+    <p class="toggle" onclick="toggleDetails('details6')">
+        <strong>2023 Sep – 2023 Dec</strong> SHIMMER (Voluntary Senior Staff Photo Activity)
+    </p>
+    <div id="details6" class="details">
+        - Executive director, responsible for event materials and expenses
+    </div>
+
+    <p class="toggle" onclick="toggleDetails('details7')">
+        <strong>2023 Oct</strong> HKICPA Business Case Competition 2023
+    </p>
+    <div id="details7" class="details">
+        - Team leader, managed work distribution and analysis report
+    </div>
 </section>
+
+<script>
+    function toggleDetails(detailId) {
+        const details = document.getElementById(detailId);
+        if (details.style.display === "none" || details.style.display === "") {
+            details.style.display = "block";  // Show the details
+        } else {
+            details.style.display = "none";     // Hide the details
+        }
+    }
+</script>
 
 </body>
 </html>
